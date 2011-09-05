@@ -3,9 +3,12 @@
 *.jar
 *.orig
 *.rej
+*.xpi
 *~
+chrome.manifest
 chrome-ext.pem
 src/archive
 src/install.js
 src/install.rdf
 src/buildnr
+releases/

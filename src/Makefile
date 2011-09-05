@@ -8,14 +8,19 @@ REVISION:=$(shell svn info | grep Revision | sed 's/Revision: //')
 
 VERSION:="1.2rc$(REVISION)b$(shell printf "%04d" $(shell cat buildnr))"
 
+RELEASES:="../releases"
+
 all: build
 
 build:
 	@echo Version: $(VERSION)
 	svn up || true
+	test -e buildnr || echo -n 0 > buildnr
 	@echo Build No $(shell cat buildnr)
 	for f in install.rdf install.js; do \
 	sed "s/SHOWIPVERSION/$(VERSION)/g" $$f.template \
+		> $$f; \
+	sed "s/GITDESCRIBE/$(shell git describe)/g" $$f.template \
 		> $$f; \
 	done
 	mv *.xpi archive/ || true
@@ -30,13 +35,14 @@ build:
 	@mv buildnr.tmp buildnr
 
 release: build
+	test -d "$(RELEASES)"
 	read "Are you sure you want to pack release $(VERSION)??" || true
-	if svn diff | grep Index >/dev/null; then echo "There are changes, won't make a release!"; false; fi
-	if test -e ../releases/showip_$(VERSION).xpi; then echo "Release already exists!"; false; fi
-	mv showip_$(VERSION).xpi ../releases/
-	cd ../releases && svn add showip_$(VERSION).xpi
-	cd ../releases && svn ci -m "Release $(VERSION)" showip_$(VERSION).xpi
-	svn copy -m "Release $(VERSION)" https://firefox-showip.googlecode.com/svn/trunk https://firefox-showip.googlecode.com/svn/release-$(VERSION)
+	if git diff | grep '+' >/dev/null; then echo "There are changes, won't make a release!"; false; fi
+	if git tag | grep $(VERSION); then echo "Release already exists!"; false; fi
+	if test -e $(RELEASES)/showip_$(VERSION).xpi; then echo "Release already exists!"; false; fi
+	git tag $(VERSION) && git push $(VERSION)
+	cp showip_$(VERSION).xpi ../releases/
+	cd $(RELEASES) && (git add showip_$(VERSION).xpi && git commit -m 'New release $(VERSION)' && git push)
 
 revision:
 	@echo $(REVISION)

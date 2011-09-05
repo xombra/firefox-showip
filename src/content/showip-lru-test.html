@@ -1,0 +1,21 @@
+<script src="showip-lru.js"></script>
+<script>
+
+var c = new ShowipCache(2);
+c.set('hallo1', 12, 3600);
+c.set('hallo2', 13, 3600);
+document.write('one ' + c.get('hallo1') + '<br>');
+document.write('one ' + c.get('hallo2') + '<br>');
+c.set('hallo3', 14, 3600); // should evict hallo1
+document.write('two ' + c.get('hallo1') + '<br>');
+document.write('two ' + c.get('hallo3') + '<br>');
+document.write('two ' + c.get('hallo2') + '<br>');
+c.set('hallo3', 14, 0); // should not be stored
+document.write('fou ' + c.get('hallo3') + '<br>');
+document.write(c.stat() + '<br><hr>');
+
+var c2 = new ShowipCache(0);
+c2.set('hallo1', 12, 3600);
+document.write('three ' + c2.get('hallo1') + '<br>');
+document.write(c2.stat());
+</script>

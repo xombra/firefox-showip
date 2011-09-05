@@ -1,0 +1,102 @@
+/*
+    ShowIP Firefox Extension
+    Copyright (C) 2007 Jan Dittmer <jdi@l4x.org>
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+statusbarpanel#showip_status {
+/*	min-width: 12ex !important;
+	*/
+}
+/*
+label#showip_status_text {
+	color: black;
+}
+
+label#showip_status_text[status="unknown"] {
+	color: black;
+}
+
+label#showip_status_text[status="ipv4"] {
+	color: red;
+}
+
+label#showip_status_text[status="ipv6"] {
+	color: green;
+}
+*/
+label.clabel {
+	width:8em;
+}
+
+toolbar[iconsize="small"] #showip_status_text {
+/*	list-style-image:none; */
+/*	  list-style-image: url("chrome://ipv6ident/content/favicon.svg"); */
+}
+
+#showip_status_item  {
+	/*
+	border: 1px red solid !important;
+	height: 0.9em;
+	*/
+}
+
+#showip_status_text  {
+	-moz-appearance: none !important;
+}
+#showip_status_text:hover {
+	-moz-appearance: none !important;
+}
+
+#showip_status_text > .toolbarbutton-text {
+	visibility: visible !important;
+	display: block !important;
+	font-size: 0.9em;
+	padding-right: 2px;
+	padding-top: 0em; padding-bottom: 0em;
+	margin-top: 0em; margin-bottom: 0em;
+}
+
+#showip_status_text > .toolbarbutton-menu-dropmarker {
+	visibility: visible !important; display: block !important;
+}
+
+#showip_status_text > .toolbarbutton-icon {
+	visibility: hidden !important; display: none !important;
+}
+/* ********************************************************************* */
+#showip_status_domain {
+	border:none !important;
+	-moz-appearance: none !important;
+}
+#showip_status_domain:hover {
+	-moz-appearance: none !important;
+}
+
+#showip_status_domain > .toolbarbutton-text {
+	visibility: visible !important; display: block !important;
+	padding-right: 3px;
+	font-size: 0.9em;
+	padding-top: 0em; padding-bottom: 0em;
+	margin-top: 0em; margin-bottom: 0em;
+}
+
+#showip_status_domain > .toolbarbutton-menu-dropmarker {
+	visibility: visible !important; display: block !important;
+}
+
+#showip_status_domain > .toolbarbutton-icon {
+	visibility: hidden !important; display: none !important;
+}

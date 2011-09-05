@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://ipv6ident/content/ipv6ident.css" type="text/css"?> 
+<!--
+    ShowIP Firefox Extension
+    Copyright (C) 2007 Jan Dittmer <jdi@l4x.org>
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+-->
+<overlay id="ipv6ident-overlay" 
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script type="text/javascript" src="showip-lru.js"/>
+	<script type="text/javascript" src="ipv6ident-pref.js"/> <!-- for preferences -->
+	<script type="text/javascript" src="ipv6ident.js"/>
+
+	<stringbundleset id="stringbundleset">
+	<stringbundle id="showip_strings" src="chrome://ipv6ident/locale/showip.properties"/>
+	</stringbundleset>
+
+	<statusbar id="status-bar">
+		<menupopup id="showip_popup" xonpopupshowing="showipExt.AddIPItems(this,event);"/>
+		<statusbarpanel label="" id="showip_status_domain"
+			mousethrough="never"
+			onclick="showipExt.showPopupDomain(event);">
+		</statusbarpanel>
+		<statusbarpanel label="ShowIP" id="showip_status_text"
+			mousethrough="never"
+			class="statusbarpanel-text"
+			onclick="showipExt.showPopup(event);">
+		</statusbarpanel>
+
+	</statusbar>
+	<!-- firefox -->
+	<menupopup id="menu_ToolsPopup">
+		<menuitem insertafter="devToolsSeparator" label="ShowIP"
+			accesskey="I" oncommand="showipExtPrefs.Show();" />
+	</menupopup>
+	<!-- mozilla -->
+	<menupopup id="taskPopup">
+		<menuitem insertafter="downloadmgr" label="ShowIP"
+			accesskey="I" oncommand="showipExtPrefs.Show();" />
+	</menupopup>
+</overlay>

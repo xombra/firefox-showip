@@ -1,0 +1,39 @@
+<!ENTITY copytoclipboard "复制到剪贴板">
+
+<!ENTITY pref.title      "ShowIP 选项">
+<!ENTITY pref.services   "服务">
+<!ENTITY pref.ui   "用户界面">
+<!ENTITY pref.Title   "标题">
+<!ENTITY pref.URL   "URL">
+<!ENTITY pref.Host   "主机">
+<!ENTITY pref.newentry   "添加新的入口">
+<!ENTITY pref.placeholder   "占位符">
+<!ENTITY pref.Add   "添加">
+<!ENTITY pref.Update   "更新">
+<!ENTITY pref.Delete   "删除">
+<!ENTITY pref.StyleV4   "IPv4 地址样式">
+<!ENTITY pref.StyleV4decimal   "十进制">
+<!ENTITY pref.StyleV4octal   "八进制">
+<!ENTITY pref.StyleV4hex   "十六进制">
+<!ENTITY pref.StyleV4dword   "DWord">
+<!ENTITY pref.Cache   "缓存">
+<!ENTITY pref.cacheage   "最大缓存时限 (-1: inf., 0: disabled, in seconds)">
+
+<!ENTITY pref.help "在 URL 中为当前 IP 或主机名使用 ## 作为通配符 ；参考上下文， ### 表示完整 URL， #D# 表示域名。 以 ! 开始的 URLs 表示以当前 IP 或主机名为第一参数来调用的本地程序 。 ">
+
+<!ENTITY pref.Openin   "打开请求于">
+<!ENTITY pref.OpeninTab   "新建标签页">
+<!ENTITY pref.OpeninHiddenTab   "新建后台标签页">
+<!ENTITY pref.AsyncResolve   "决定 DNS 异步（更好的交互）">
+<!ENTITY pref.Colors   "颜色">
+<!ENTITY pref.cdefault   "默认">
+
+<!ENTITY pref.behave   "Behavior">
+<!ENTITY pref.appear   "Appearance">
+<!ENTITY pref.ImmediateResolve   "Resolve immediately, otherwise only on right click">
+<!ENTITY pref.ShowDomain   "Show Domain next to IP address">
+<!ENTITY pref.RemoteDo   "Resolve domain over HTTPS using the service defined below">
+<!ENTITY pref.RemoteHost   "Remote server">
+<!ENTITY pref.RemoteImmediate   "Resolve immediately, otherwise only on right click">
+<!ENTITY pref.Socks   "Behavior with proxy for DNS resolution">
+<!ENTITY pref.forcesocks   "Always try to resolve hostname with local DNS (this poses a possible security risk due to queries about the site you're browsing being leaked to the DNS server)">

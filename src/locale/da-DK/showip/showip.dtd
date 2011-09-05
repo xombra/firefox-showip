@@ -1,0 +1,39 @@
+<!ENTITY copytoclipboard "Kopier til udklipsholder">
+
+<!ENTITY pref.title      "ShowIP Indstillinger">
+<!ENTITY pref.services   "Tjenster">
+<!ENTITY pref.ui   "Bruger grænseflade">
+<!ENTITY pref.Title   "Titel">
+<!ENTITY pref.URL   "URL">
+<!ENTITY pref.Host   "Vært">
+<!ENTITY pref.newentry   "Tilføj ny post">
+<!ENTITY pref.placeholder   "pladsholder">
+<!ENTITY pref.Add   "Tilføj">
+<!ENTITY pref.Update   "Opdater">
+<!ENTITY pref.Delete   "Slet">
+<!ENTITY pref.StyleV4   "IPv4 Addressetype">
+<!ENTITY pref.StyleV4decimal   "Decimal">
+<!ENTITY pref.StyleV4octal   "Octal">
+<!ENTITY pref.StyleV4hex   "Hex">
+<!ENTITY pref.StyleV4dword   "DWord">
+<!ENTITY pref.Cache   "Cache">
+<!ENTITY pref.cacheage   "Maks cache alder (-1: uendelig., 0: slukket, i sekunder)">
+
+<!ENTITY pref.help "Brug ## som wildcard i URL (adressen) for den nuværende IP eller Værtsnavn, afhængig af konteksten. ### præsenterer den fulde URL (adresse), #D# kun domain navnet. URL (adresser) starter med ! hvilket antages at være lokale programmer og kaldes med den nuværende IP eller værtsnavn som det første parameter">
+
+<!ENTITY pref.Openin   "Åbn forespørgsler i">
+<!ENTITY pref.OpeninTab   "Åbn forespørgsler i nyt faneblad">
+<!ENTITY pref.OpeninHiddenTab   "Åbn forespørgsler i nyt baggrunds faneblad">
+<!ENTITY pref.AsyncResolve   "Vedtag DNS asynchront (bedre interaktivitet)">
+<!ENTITY pref.Colors   "Farver">
+<!ENTITY pref.cdefault   "Standard">
+
+<!ENTITY pref.behave   "Behavior">
+<!ENTITY pref.appear   "Appearance">
+<!ENTITY pref.ImmediateResolve   "Resolve immediately, otherwise only on right click">
+<!ENTITY pref.ShowDomain   "Show Domain next to IP address">
+<!ENTITY pref.RemoteDo   "Resolve domain over HTTPS using the service defined below">
+<!ENTITY pref.RemoteHost   "Remote server">
+<!ENTITY pref.RemoteImmediate   "Resolve immediately, otherwise only on right click">
+<!ENTITY pref.Socks   "Behavior with proxy for DNS resolution">
+<!ENTITY pref.forcesocks   "Always try to resolve hostname with local DNS (this poses a possible security risk due to queries about the site you're browsing being leaked to the DNS server)">

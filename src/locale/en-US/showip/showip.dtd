@@ -1,0 +1,40 @@
+<!ENTITY copytoclipboard "Copy to clipboard">
+
+<!ENTITY pref.title      "ShowIP Settings">
+<!ENTITY pref.services   "Services">
+<!ENTITY pref.ui   "User Interface">
+<!ENTITY pref.behave   "Behavior">
+<!ENTITY pref.appear   "Appearance">
+<!ENTITY pref.Title   "Title">
+<!ENTITY pref.URL   "URL">
+<!ENTITY pref.Host   "Host">
+<!ENTITY pref.newentry   "Add new Entry">
+<!ENTITY pref.placeholder   "placeholder">
+<!ENTITY pref.Add   "Add">
+<!ENTITY pref.Update   "Update">
+<!ENTITY pref.Delete   "Delete">
+<!ENTITY pref.StyleV4   "IPv4 Address Style">
+<!ENTITY pref.StyleV4decimal   "Decimal">
+<!ENTITY pref.StyleV4octal   "Octal">
+<!ENTITY pref.StyleV4hex   "Hex">
+<!ENTITY pref.StyleV4dword   "DWord">
+<!ENTITY pref.Cache   "Cache">
+<!ENTITY pref.cacheage   "Max cache age (-1: inf., 0: disabled, in seconds)">
+
+<!ENTITY pref.help "Use ## as wildcard in the URL for the current IP or Hostname, depending on the context. ### represents the full URL, #D# just the domain name. URLs starting with ! are assumed to be local programs and called with the current IP or hostname as the first parameter">
+
+<!ENTITY pref.Openin   "Options">
+<!ENTITY pref.OpeninTab   "Open queries in new tab">
+<!ENTITY pref.OpeninHiddenTab   "Make it a background tab">
+<!ENTITY pref.AsyncResolve   "Resolve DNS asynchronously (better interactivity)">
+<!ENTITY pref.ImmediateResolve   "Resolve immediately, otherwise only on right click">
+<!ENTITY pref.ShowDomain   "Show canoical domain name next to IP address">
+<!ENTITY pref.RemoteDo   "Resolve domain over HTTPS using the service defined below">
+<!ENTITY pref.RemoteHost   "Remote server">
+<!ENTITY pref.RemoteImmediate   "Resolve immediately, otherwise only on right click">
+<!ENTITY pref.Colors   "Colors">
+<!ENTITY pref.cdefault   "Default">
+<!ENTITY pref.Socks   "Behavior with proxy for DNS resolution">
+<!ENTITY pref.forcesocks   "Always try to resolve hostname with local DNS (this poses a possible security risk due to queries about the site you're browsing being leaked to the DNS server)">
+
+

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://ipv6ident/content/ipv6ident.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://ipv6ident/locale/showip.dtd">
+<!--
+    ShowIP Firefox Extension
+    Copyright (C) 2007 Jan Dittmer <jdi@l4x.org>
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+-->
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	title="&pref.title;"
+	id="ipv6ident-config"
+	buttons="accept,cancel"
+	onload="showipExtPrefs.DialogInit();"
+	ondialogaccept="showipExtPrefs.Save(); return true;"
+	ondialogcancel="return true;"
+	resize="yes"
+	persist="width height screenX screenY"
+	xmaxwidth="640"
+	minwidth="640"
+	xmaxheight="500"
+	minheight="500"
+	flex="1"
+	style="width:640px;">
+
+<script type="application/x-javascript" src="chrome://global/content/strres.js"/>
+<script type="application/x-javascript" src="chrome://ipv6ident/content/ipv6ident-pref.js"/>
+<tabbox flex="1" style="overflow:auto;">
+<tabs>
+<tab label="&pref.services;"/>
+<tab label="&pref.behave;"/>
+<tab label="&pref.appear;"/>
+</tabs>
+<tabpanels flex="1" style="overflow:auto;">
+<tabpanel flex="1" style="overflow:auto;">
+<vbox flex="1">
+<groupbox flex="1">
+	<caption label="URLs"/>
+   <vbox flex="1"> 
+	<!-- query entries -->
+	<!--<hbox align="top" flex="1">-->
+	<listbox id="EntryList"
+		flex="1"
+		rows="20"
+		style="overflow:auto;"
+		xclass="list"
+		onselect="showipExtPrefs.CopyEntry();"
+		>
+	<listcols>
+		<listcol style="width:60px;"/><!-- v4 -->
+		<listcol style="width:60px;"/><!-- v6 -->
+		<listcol style="width:60px;"/><!-- host -->
+		<listcol flex="2" style="width:400px;"/><!-- title -->
+		<listcol flex="3"/><!-- url -->
+	</listcols>
+	<listhead>
+		<listheader label="IPv4"/>
+		<listheader label="IPv6"/>
+		<listheader label="&pref.Host;"/>
+		<listheader label="&pref.Title;"/>
+		<listheader label="&pref.URL;"/>
+	</listhead>
+	</listbox>
+	<!--</hbox>-->
+ </vbox>
+</groupbox>
+<groupbox flex="0">
+	<caption label="&pref.newentry;"/>
+	<!-- add new entries -->
+	<vbox>
+	<hbox>
+	<label value="&pref.Title;"/><textbox id="entryTitle" label="&pref.Title;" flex="1"/>
+	</hbox>
+	<hbox>
+	<label value="&pref.URL;"/><textbox id="entryURL" label="&pref.URL; (## &pref.placeholder;)" flex="1"/>
+	</hbox>
+	</vbox>
+	<hbox>
+	<checkbox id="entryIPv4" label="IPv4"/>
+	<checkbox id="entryIPv6" label="IPv6"/>
+	<checkbox id="entryHost" label="&pref.Host;"/>
+	<button label="&pref.Add;" oncommand="showipExtPrefs.AddEntry();"/>
+	<button label="&pref.Update;" oncommand="showipExtPrefs.UpdEntry();"/>
+	<button label="&pref.Delete;" oncommand="showipExtPrefs.DelEntry();"/>
+	</hbox>
+	<hbox>
+	<description style="width:400px;">&pref.help;</description>
+	</hbox>
+</groupbox>
+</vbox>
+</tabpanel>
+
+<!-- behaviour -->
+<tabpanel flex="1" style="overflow:auto;">
+<vbox>
+<groupbox flex="0">
+	<caption label="&pref.Openin;"/>
+	<!-- other settings -->
+	<vbox>
+	<checkbox id="newtab" label="&pref.OpeninTab;" oncommand="showipExtPrefs.NewtabClick();"/>
+	<checkbox id="hiddentab" label="&pref.OpeninHiddenTab;"/>
+	<checkbox id="async" label="&pref.AsyncResolve;"/>
+	<checkbox id="resolve_immediate" label="&pref.ImmediateResolve;"/>
+	</vbox>
+</groupbox>
+<groupbox flex="0">
+	<caption label="&pref.Cache;"/>
+	<hbox align="baseline">
+		<label value="&pref.cacheage;"/>
+		<textbox id="showip_cacheage" cols="7" size="7" flex="0" style="width:5em;"/>
+	</hbox>
+</groupbox>
+<groupbox flex="0">
+	<caption label="&pref.Socks;"/>
+	<vbox>
+	<hbox align="top">
+	<checkbox id="showip_forcesocks" label="" oncommand="showipExtPrefs.ForceSocksClick();"/>
+	<description style="width:400px;">&pref.forcesocks;</description>
+	</hbox>
+	<checkbox id="remote_do" label="&pref.RemoteDo;" oncommand="showipExtPrefs.RemoteClick();"/>
+	<checkbox id="remote_immediate" label="&pref.RemoteImmediate;"/>
+	<hbox align="baseline"><label value="&pref.RemoteHost;"/><textbox id="remote_host" /><button label="Default" oncommand="showipExtPrefs.SetRemoteDefault();"/></hbox>
+	</vbox>
+</groupbox>
+</vbox>
+</tabpanel>
+
+<!-- appearance -->
+<tabpanel flex="1" style="overflow:auto;">
+<vbox>
+<groupbox flex="0">
+	<caption label="&pref.StyleV4;"/>
+	<!-- other settings -->
+	<vbox>
+	<radiogroup id="showip_stylev4">
+		<!-- order matters ... -->
+		<hbox>
+		<radio label="&pref.StyleV4decimal;"/>
+		<radio label="&pref.StyleV4octal;"/>
+		<radio label="&pref.StyleV4hex;"/>
+		<radio label="&pref.StyleV4dword;"/>
+		</hbox>
+	</radiogroup>
+	</vbox>
+</groupbox>
+<groupbox flex="0">
+	<caption label="&pref.Colors;"/>
+	<vbox>
+	<hbox>
+	  <label class="clabel" value="&pref.cdefault;"/>
+	  <textbox id="ipv6_coldef" cols="7" size="7" onchange="showipExtPrefs.updatecolorp(this,'ipv6_colpdef')"/>
+	  <colorpicker id="ipv6_colpdef" type="button" onchange="showipExtPrefs.updatecolor(this,'ipv6_coldef')"/>
+	</hbox>
+	<hbox>
+	  <label class="clabel" value="IPv4"/><textbox id="ipv6_colv4" cols="7" size="7" onchange="showipExtPrefs.updatecolorp(this,'ipv6_colpv4')"/>
+		<colorpicker  id="ipv6_colpv4" type="button" onchange="showipExtPrefs.updatecolor(this,'ipv6_colv4')"/>
+	</hbox>
+	<hbox>
+	  <label class="clabel" value="IPv6"/><textbox id="ipv6_colv6" cols="7" size="7" onchange="showipExtPrefs.ipv6_updatecolorp(this,'ipv6_colpv6')"/>
+		<colorpicker  id="ipv6_colpv6" type="button" onchange="showipExtPrefs.updatecolor(this,'ipv6_colv6')"/>
+	</hbox>
+	</vbox>
+</groupbox>
+<groupbox flex="0">
+	<caption label="&pref.Openin;"/>
+	<!-- other settings -->
+	<vbox>
+	<checkbox id="show_domain" label="&pref.ShowDomain;"/>
+	</vbox>
+</groupbox>
+</vbox>
+
+</tabpanel>
+
+</tabpanels>
+</tabbox>
+</dialog>

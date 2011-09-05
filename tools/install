@@ -1,0 +1,5 @@
+#!/bin/sh
+# trivial script to prevent installing the extension all the
+# time for testing...
+ant
+cp ipv6ident.jar ~/.mozilla/firefox/default.jp7/extensions/{3e9bb2a7-62ca-4efa-a4e6-f6f6168a652d}/chrome/

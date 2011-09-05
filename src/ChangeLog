@@ -1,0 +1,90 @@
+TODO
+- spoof detection (still)
+- lookup of mx, ... records (probably needs a real dns client)
+- statusbar drag'n'drop
+- country flags?
+- LRU list for ips
+- include ip-to-country database and country flags
+- put ip num converter to CopyToClipboard
+- add icon in statusbar
+
+v1 (V0.8.20)
+- add optional HTTPS lookups via dns.l4x.org
+   (good for those behind a proxy)
+- allow deferred lookups on right-click of panel
+- fix tab events
+- fix zh-CN and da-DK translation with en-US defaults
+- add debugging facilities
+- change version numbering to a single monotonically
+  increasing number
+- add option to always show the domain name in the
+  statusbar
+- let the options dialog window size be persistent
+
+
+v0.8.10
+- fix copy to clipboard
+
+v0.8.09
+- fix organize statusbar
+
+v0.8.07
+- implement cache ageing (see preferences dialog)
+- fix preferences dialog to fit on smaller screens and
+  scale to the correct size
+- bump compatibility to Firefox 3.0
+- fix thread handling for dns asyncResolve
+
+v0.8.06
+- bump compatibility to newer versions
+- move to google code hosting:
+  http://code.google.com/p/firefox-showip/
+- add license header to all files
+- clean up
+- async lookups
+
+v0.8.05
+- revert multithreaded lookup. it's causing problems for
+  some people
+
+v0.8.04
+- make compatible and test with ff2.0
+- fix error in onLookupComplete
+- multithreaded lookup
+
+v0.8.03
+- s/more/+/
+
+v0.8.02
+- fix localhost not resolvable
+
+v0.8.01
+- fix compatibility with ff 1.0
+
+v0.8.00
+- converted code to use javascript objects and the showip prefix where necessary
+- show all IPs for a domain
+- new #D# tag for just the sld and tld part of the domain
+- full localization support
+- fix network.dns.disableIPv6 = true config case
+- support to display IP as octal/hex/dword/decimal in the statusbar
+- calling local processes with the ip/hostname as the only parameter instead
+of hostname/ip pair. Please change your rules accordingly. This is consistent
+with the url scheme now. If you need to pass more parameters to the process,
+use a shell wrapper.
+
+v0.7.12
+- maxVersion fix
+
+v0.7.11
+- bump maxVersion to 1.6
+
+v0.7.7
+- fix popup problem
+
+v0.7.6
+- esymbian ip2country
+
+v0.7.5
+- renamed to showip
+- seperator between local ips

@@ -1,0 +1,39 @@
+- GPL v2
+
+Socks proxy
+===========
+
+- http://xulrunner.sourcearchive.com/documentation/1.9.0.4/nsProtocolProxyService_8cpp-source.html
+  (mSOCKSProxyRemoteDNS)
+- network.proxy.socks_remote_dns
+- sets flag nsIProxyInfo::TRANSPARENT_PROXY_RESOLVES_HOST
+- sets mProxyTransparentResolvesHost in nsSocketTransport2.cpp+828, and further down at 932
+-
+- it just lets the proxy side do the resolve... no dns queries performed at all on the
+  client side
+
+- von 'internezzo ag': domain neben ip addresse
+
+Caching
+=======
+- tbd
+
+Helpful resources:
+- Brian Duffs' weblog entry for getting started
+  http://www.orablogs.com/duffblog/archives/000536.html
+- DNS Resolver from FlagFox:
+  http://www.extensionsmirror.nl/index.php?showtopic=1941&hl=ip+address
+- GUID Generator
+  http://www.hoskinson.net/webservices/guidgeneratorclient.aspx
+- Dynamic Overlays
+  http://www.xulplanet.com/tutorials/xultu/crosspov.html
+- statusbarpanel on xulplanet
+  http://www.xulplanet.com/references/elemref/ref_statusbarpanel.html#class_statusbarpanel-iconic
+- mozilla tinderstatus tutorial
+  http://www.mozilla.org/docs/tutorials/tinderstatus/
+- dev extension help
+  http://kb.mozillazine.org/Dev_:_Extensions_:_Example_Code_:_On_Tab_Load
+- mozillazine help forum
+  http://forums.mozillazine.org/viewforum.php?f=19
+
+

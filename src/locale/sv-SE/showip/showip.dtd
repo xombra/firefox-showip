@@ -1,0 +1,40 @@
+<!ENTITY copytoclipboard "Kopiera till Urklipp">
+
+<!ENTITY pref.title      "ShowIP: Inställningar">
+<!ENTITY pref.services   "Tjänster">
+<!ENTITY pref.ui   "Användargränssnitt">
+<!ENTITY pref.behave   "Beteende">
+<!ENTITY pref.appear   "Utseende">
+<!ENTITY pref.Title   "Rubrik">
+<!ENTITY pref.URL   "URL">
+<!ENTITY pref.Host   "Värd">
+<!ENTITY pref.newentry   "Lägg till ny post">
+<!ENTITY pref.placeholder   "platshållare">
+<!ENTITY pref.Add   "Lägg till">
+<!ENTITY pref.Update   "Uppdatera">
+<!ENTITY pref.Delete   "Ta bort">
+<!ENTITY pref.StyleV4   "Adressformat IPv4">
+<!ENTITY pref.StyleV4decimal   "Decimalt">
+<!ENTITY pref.StyleV4octal   "Oktalt">
+<!ENTITY pref.StyleV4hex   "Hexadecimalt">
+<!ENTITY pref.StyleV4dword   "DWORD">
+<!ENTITY pref.Cache   "Cache">
+<!ENTITY pref.cacheage   "Maxålder för cache (-1: oänd., 0: inakt., i sekunder)">
+
+<!ENTITY pref.help "Använd ## som jokertecken i URL:en för aktuellt värdnamn eller IP, beroende på sammanhanget. ### representerar den fullständiga URL:en, #D# endast domännamnet. URL:er som inleds med ! antas vara lokala program och anropas med aktuellt värdnamn eller IP som första parameter.">
+
+<!ENTITY pref.Openin   "Öppna frågor i">
+<!ENTITY pref.OpeninTab   "Öppna frågor i ny flik">
+<!ENTITY pref.OpeninHiddenTab   "Öppna frågor i ny bakgrundsflik">
+<!ENTITY pref.AsyncResolve   "Matcha DNS asynkront (bättre interaktivitet)">
+<!ENTITY pref.ImmediateResolve   "Matcha omedelbart, annars endast vid högerklick">
+<!ENTITY pref.ShowDomain   "Visa kanoniskt domännamn bredvid IP-adressen">
+<!ENTITY pref.RemoteDo   "Matcha domän över HTTPS m.h.a. tjänsten som anges nedan">
+<!ENTITY pref.RemoteHost   "Fjärrserver">
+<!ENTITY pref.RemoteImmediate   "Matcha omedelbart, annars endast vid högerklick">
+<!ENTITY pref.Colors   "Färger">
+<!ENTITY pref.cdefault   "Standard">
+<!ENTITY pref.Socks   "Proxybeteende vid DNS-matchning">
+<!ENTITY pref.forcesocks   "Matcha alltid värdnamn (möjlig säkerhetsrisk p.g.a. att frågor om webbplatsen du besöker kan läcka till DNS-klientservern)">
+
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<profiles>
+  <profile id="default">
+    <pref name="ipv6ident.urls" type="Char" value="46h|whois.sc|http://www.whois.sc/%SRC"/>
+    <pref name="ipv6ident.newtab" type="Bool" value="true"/>
+  </profile>
+</profiles>

@@ -40,7 +40,7 @@ release: build
 	if git tag | grep $(VERSION); then echo "Release already exists!"; false; fi
 	if test -e $(RELEASES)/showip_$(VERSION).xpi; then echo "Release already exists!"; false; fi
 	read "All checks passed. Are you sure you want to pack release $(VERSION)??" || true
-	git tag $(VERSION) && git push $(VERSION)
+	git tag $(VERSION) && git push origin
 	cp showip_$(VERSION).xpi ../releases/
 	cd $(RELEASES) && (git add showip_$(VERSION).xpi && git commit -m 'New release $(VERSION)' && git push)
 

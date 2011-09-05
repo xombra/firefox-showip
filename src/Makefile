@@ -36,10 +36,10 @@ build:
 
 release: build
 	test -d "$(RELEASES)"
-	read "Are you sure you want to pack release $(VERSION)??" || true
 	if git diff | grep '+' >/dev/null; then echo "There are changes, won't make a release!"; false; fi
 	if git tag | grep $(VERSION); then echo "Release already exists!"; false; fi
 	if test -e $(RELEASES)/showip_$(VERSION).xpi; then echo "Release already exists!"; false; fi
+	read "All checks passed. Are you sure you want to pack release $(VERSION)??" || true
 	git tag $(VERSION) && git push $(VERSION)
 	cp showip_$(VERSION).xpi ../releases/
 	cd $(RELEASES) && (git add showip_$(VERSION).xpi && git commit -m 'New release $(VERSION)' && git push)

@@ -42,8 +42,12 @@ init: function()  {
 				Components.interfaces.nsIWebProgress.NOTIFY_STATE_DOCUMENT;
 			const IPV6_NOTIFY_LOCATION =
 				Components.interfaces.nsIWebProgress.NOTIFY_LOCATION;
-			window.getBrowser().addProgressListener(this,
+			try {
+				window.getBrowser().addProgressListener(this,
 					IPV6_NOTIFY_LOCATION | IPV6_NOTIFY_STATE_DOCUMENT);
+			} catch(e) {
+				window.getBrowser().addProgressListener(this);
+			}
 		},
 		onLocationChange:function(aProgress,aRequest,aLocation) {
 			// this gets nsIWebProgress and nsIRequest
@@ -238,6 +242,9 @@ initv4: function() {
 	}, false);
 		*/
 	var popup = document.getElementById("showip_popup");
+	if (!popup) {
+		return null;
+	}
 	popup.addEventListener("popupshowing", function(e) {
 		showipExt.dump("popupshowing " + e.target.id + " " + e.button);
 		return true;

@@ -123,6 +123,9 @@ init: function()  {
 			 var req = aHttpChannel.QueryInterface(Components.interfaces.nsIHttpChannelInternal);
 			 var chan = aHttpChannel.QueryInterface(Components.interfaces.nsIChannel);
 			 if (req) {
+				if (req.proxyInfo && req.proxyInfo.type && (req.proxyInfo.type != 'direct')) {
+					return null;
+				}
 				var local = '';
 				var remote = '';
 				var host = '';

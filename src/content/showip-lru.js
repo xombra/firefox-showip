@@ -46,7 +46,7 @@ ShowipCache.prototype.purge = function() {
 	tmp.sort(function(a, b) {
 			return a.last > b.last;
 		});
-	while (this.length >= this.size) {
+	while ((this.length >= this.size) && (tmp.length > 0)) {
 		this.del(tmp[0].key);
 		tmp.shift();
 	}
